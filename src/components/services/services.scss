@@ -1,0 +1,119 @@
+.services {
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .textContainer {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .textContainer p {
+    font-size: 20px;
+    font-weight: 200;
+    color: gray;
+    text-align: right;
+  }
+  
+  .textContainer hr {
+    width: 500px;
+    border: none;
+    border-top: 0.5px solid gray;
+  }
+  
+  .titleContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .titleContainer .title {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .titleContainer .title img {
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+    transition: border 0.3s ease-in-out; 
+  }
+  
+  .titleContainer .title img:hover {
+    border: 5px solid white; 
+  }
+  
+  .titleContainer .title h1 {
+    font-size: 96px;
+    font-weight: 100;
+  }
+  
+  .titleContainer .title button {
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #ac87c5;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    /* Glowing Effect */
+    box-shadow: 0 0 10px rgba(230, 164, 180, 0.8);
+    animation: glow 1.5s infinite alternate;
+    /* Shadow Effect */
+    filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 1));
+    /* Transition for smoother effect */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .titleContainer .title button:hover {
+    transform: scale(1.1); /* Upscale on hover */
+  }
+  
+  .listContainer {
+    flex: 2;
+    display: flex;
+    max-width: 1366px;
+    margin: auto;
+  }
+  
+  .listContainer .box {
+    padding: 50px;
+    border: 0.5px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .listContainer .box button {
+    padding: 10px;
+    background-color: #ac87c5;
+    border: none;
+    cursor: pointer;
+    /* Shadow Effect */
+    filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 1));
+    /* Transition for smoother effect */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .listContainer .box button:hover {
+    transform: scale(1.1); /* Upscale on hover */
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px rgba(230, 164, 180, 0.8);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(230, 164, 180, 0.8);
+    }
+  }
+  

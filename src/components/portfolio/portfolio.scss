@@ -1,0 +1,89 @@
+.portfolio {
+    position: relative;
+  
+    .progress {
+      position: sticky;
+      top: 0;
+      left: 0;
+      padding-top: 50px;
+      text-align: center;
+      color: #ffa41b;
+      font-size: 36px;
+  
+      .progressBar {
+        height: 10px;
+        background-color: #caf0f8;
+      }
+    }
+  
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+  
+      .wrapper {
+        max-width: 1366px;
+        margin: auto;
+        gap: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        .imageContainer {
+          flex: 1;
+          height: 50%;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 10px solid #caf0f8;
+          }
+        }
+  
+        .textContainer {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+  
+          h2 {
+            font-size: 72px;
+            border-bottom: 2px solid #caf0f8;
+          }
+  
+          p {
+            color: gray;
+            font-size: 20px;
+          }
+  
+          button {
+            background-color: #ffa41b;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            padding: 15px;
+            width: 190px;
+            cursor: pointer;
+            transition: all 0.3s ease; 
+  
+            
+            &:hover {
+              transform: scale(1.1);
+            }
+  
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  
+            &:hover {
+              box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+  
