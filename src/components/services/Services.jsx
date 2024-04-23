@@ -34,8 +34,8 @@ const Services = () => {
     >
       <motion.div className="textContainer" variants={variants}>
         <motion.p whileHover={{color:"#F4CE14"}}>
-          I focus on helping your brand grow
-          <br /> and move forward
+          I focus on helping your Company grow
+          <br /> and move forward 
         </motion.p >
         <hr/>
       </motion.div>
