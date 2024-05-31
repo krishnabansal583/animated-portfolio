@@ -1,8 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,300..800&display=swap");
+@import "../../app.scss";
+
 .hero {
   height: calc(100vh - 100px);
-  background: #11009e;
+  background: url("public/pure black background.jpg") no-repeat center center/cover;
   overflow: hidden;
   position: relative;
+
+  @include desktop {
+    height: calc(100vh - 80px);
+  }
+
+  @include mobile {
+    height: calc(100vh - 60px);
+    background-size: 250%;
+  }
 
   .wrapper {
     max-width: 1366px;
@@ -15,51 +28,261 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      
-      gap: 40px;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
 
-      h2 {
-        font-size: 30px;
-        color: #b418fd;
-        letter-spacing: 10px;
+      @include tablet {
+        gap: 7px;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        margin-left: 40px;
+        text-align: left;
       }
 
-      h1 {
-        font-size: 88px;
+      @include mobile {
+        height: 35%;
+        width: 100%;
+        gap: 7px;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
+        margin-left: 0px;
+      }
+
+      h2 {
+        font-size: 50px;
+        color: #b418fd;
+        letter-spacing: 5px;
+        margin-right: 250px;
+        font-weight: 900;
+        font-family: "Open Sans", sans-serif;
+
+        @include desktop {
+          font-size: 40px;
+          margin-right: 80px;
+          margin-top: 80px;
+        }
+
+        @include tablet {
+          font-size: 30px;
+          margin-right: 120px;
+        }
+
+        @include mobile {
+          font-size: 30px;
+          margin-top: 220px;
+          margin-right: 70px;
+          margin-left: 0;
+          text-align: left;
+        }
+      }
+
+      .main-heading {
+        font-size: 85px;
+        color: #caf0f8;
+        position: relative;
+        margin-bottom: 20px;
+        margin-left: 35px;
+        font-family: "Open Sans", sans-serif;
+
+        @include desktop {
+          font-size: 60px;
+          margin-left: 80px;
+        }
+
+        @include tablet {
+          font-size: 50px;
+          margin-left: 10px;
+        }
+
+        @include mobile {
+          font-size: 40px;
+          margin-left: 0;
+        }
+      }
+
+      .tagline {
+        font-size: 24px;
+        color: gray;
+        font-weight: 300;
+        margin-top: -10px;
+        transition: all 3s ease;
+        margin-left: 60%;
+        font-family: "EB Garamond", serif;
+
+        @include desktop {
+          font-size: 20px;
+          margin-left: 70%;
+        }
+
+        @include tablet {
+          font-size: 15px;
+          margin-left: 40%;
+        }
+
+        @include mobile {
+          font-size: 12px;
+          margin-left: 150px;
+          white-space: pre-wrap;
+          width: 130px;
+          margin-top: -20px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+          color: #ffa41b;
+        }
       }
 
       .buttons {
+        margin-top: 20px;
+        margin-left: -200px;
+        z-index: 2; // Ensuring buttons are above other elements
+
+        @include desktop {
+          margin-left: 280px;
+          height: 100%;
+          width: 100%;
+        }
+
+        @include tablet {
+          margin-left: -150px;
+        }
+
+        @include mobile {
+          height: 100px;
+          width: 220px;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          margin-left: -100px;
+        }
+
         button {
-          padding: 20px;
-          border: 1px solid white;
+          padding: 10px 15px;
+          border: 1px solid #caf0f8;
           border-radius: 10px;
           background-color: transparent;
           color: #caf0f8;
-          margin-right: 20px;
+          margin-right: 10px;
           cursor: pointer;
-          font-weight: 300;
+          font-weight: 600;
+          font-size: small;
+          font-family: "EB Garamond", serif;
+
+          @include desktop {
+            padding: 15px 15px;
+            margin-right: 15px;
+          }
+
+          @include tablet {
+            padding: 8px 12px;
+            margin-right: 10px;
+          }
+
+          @include mobile {
+            width: 45%;
+            padding: 15px 0px;
+            margin-right: 10px;
+            margin-top: 0px;
+            font-size: 10px;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
 
       img {
         width: 50px;
+        margin-left: -160px;
+
+        @include desktop {
+          margin-left: 40px;
+          width: 40px;
+          margin-bottom: 80px;
+        }
+
+        @include tablet {
+          margin-left: -130px;
+          width: 30px;
+        }
+
+        @include mobile {
+          margin-left: 0;
+          width: 28px;
+          margin-top: 15px;
+        }
       }
     }
   }
 
   .imageContainer {
-    height: 100%;
+    height: 70%;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 80px;
+    right: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    z-index: 0; // Ensure image container is below buttons
+
+    @include desktop {
+      height: 70%;
+      right: 20%;
+      top: 60px;
+    }
+
+    @include tablet {
+      height: 72%;
+      right: 15%;
+    }
+
+    @include mobile {
+      height: 40%;
+      width: 80%;
+      top: unset;
+      bottom: 100px;
+      right: 10%;
+    }
+
+    img {
+      height: 90%;
+      object-fit: cover;
+      border: 5px solid #b418fd;
+      border-radius: 50px;
+      background-color: transparent;
+      box-shadow: 0 4px 8px rgba(255, 253, 253, 5);
+
+      @include mobile {
+        height: 100%;
+        border-radius: 25px;
+      }
+    }
   }
+
   .slidingTextContainer {
     position: absolute;
-    font-size: 50vh;
+    font-size: 40vh;
     bottom: -120px;
     white-space: nowrap;
     color: #ffffff1e;
     width: 50%;
     font-weight: bold;
+    z-index: 0; // Ensure sliding text container is below buttons
+
+    @include desktop {
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      font-size: 20vh;
+      bottom: -100px;
+      width: 100%;
+      text-align: center;
+      color: #ffffff3f;
+    }
   }
 }

@@ -1,89 +1,198 @@
+@import "../../app.scss";
+
 .portfolio {
-    position: relative;
-  
-    .progress {
-      position: sticky;
-      top: 0;
-      left: 0;
-      padding-top: 50px;
-      text-align: center;
-      color: #ffa41b;
-      font-size: 36px;
-  
-      .progressBar {
-        height: 10px;
-        background-color: #caf0f8;
+  position: relative;
+
+  .progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    text-align: center;
+    color: #caf0f8;
+    font-size: 36px;
+
+    @include desktop {
+      font-size: 30px;
+      top: -40px;
+    }
+
+    @include mobile {
+      padding-top: 20px;
+      font-size: 20px; /* Decreased font size for mobile */
+      top: 0; /* Keep it fixed at the top */
+    }
+    .progressBar {
+      height: 10px;
+      background-color: #b418fd;
+
+      @include desktop {
+        height: 7px;
+      }
+      @include mobile {
+        height: 6px;
       }
     }
-  
-    .container {
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+      max-width: 1366px;
+      margin: auto;
+      gap: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-  
-      .wrapper {
-        max-width: 1366px;
-        margin: auto;
-        gap: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-  
-        .imageContainer {
-          flex: 1;
-          height: 50%;
-  
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 10px solid #caf0f8;
+
+      @include mobile {
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 20px; /* Adjust gap for mobile */
+      }
+      .imageContainer {
+        flex: 1;
+        height: 420px; /* Set a fixed height */
+        overflow: hidden; /* Hide any overflow */
+
+        @include desktop {
+          width: 50%;
+          height: 450px; /* Set a fixed height */
+        }
+
+        @include mobile {
+          width: 100%;
+          height: 100%;
+          // max-width: 320px; /* Increased max-width for mobile */
+          // max-height: 480px; /* Increased max-height for mobile */
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border: 7px solid #b418fd;
+
+          @include desktop {
+            width: 450px;
+            height: 320px;
+            margin: 100px;
+            margin-left: 120px;
+          }
+          @include mobile {
+            border-radius: 2px solid #b418fd;
+            width: 350px;
+            height: 220px;
+            margin: 130px;
           }
         }
-  
-        .textContainer {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
-  
-          h2 {
-            font-size: 72px;
-            border-bottom: 2px solid #caf0f8;
+      }
+
+      .textContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include desktop {
+          align-items: center;
+          margin-right: 60px;
+          text-align: center;
+          gap: 25px;
+          margin-left: 50px;
+          justify-content: center;
+          margin-bottom: 30px;
+        }
+
+        @include mobile {
+          align-items: center;
+          text-align: center;
+          gap: 25px; /* Adjust gap for mobile */
+          justify-content: center;
+          margin-top: -30px;
+        }
+        h2 {
+          font-size: 65px;
+          margin: 0;
+          padding-bottom: 10px;
+          border-bottom: 2px solid #b418fd;
+          font-family: "Open Sans", sans-serif;
+
+          @include desktop {
+            font-size: 45px;
           }
-  
-          p {
-            color: gray;
-            font-size: 20px;
+
+          @include mobile {
+            font-size: 30px; /* Adjust font size for mobile */
+            padding-bottom: 5px; /* Adjust padding for mobile */
+            margin-top: 100px;
+            text-align: center;
           }
-  
-          button {
-            background-color: #ffa41b;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
+        }
+
+        p {
+          color: gray;
+          font-size: 20px;
+          font-family: "EB Garamond", serif;
+          margin-top: 10px;
+          text-align: left; /* Justify the text */
+          text-indent: 0; /* Remove any indentation */
+
+          @include desktop {
+            font-size: 16px;
+          }
+
+          @include mobile {
+            font-size: 16px; /* Adjust font size for mobile */
+            white-space: normal;
+            overflow-wrap: break-word;
+            text-align: left;
+            margin-right: 40px;
+            margin-left: 55px;
+            margin-top: 5px; /* Adjust margin for mobile */
+            margin-bottom: 5px;
+          }
+        }
+
+        a {
+          display: inline-block;
+          background-color: #b418fd;
+          border: none;
+          border-radius: 10px;
+          font-size: 18px;
+          padding: 15px;
+          width: 190px;
+          text-align: center;
+          text-decoration: none;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          @include desktop {
+            font-size: 15px;
+            width: 150px;
+
             padding: 15px;
-            width: 190px;
-            cursor: pointer;
-            transition: all 0.3s ease; 
-  
-            
-            &:hover {
-              transform: scale(1.1);
-            }
-  
-            
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  
-            &:hover {
-              box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
-            }
           }
+
+          @include mobile {
+            padding: 12px;
+          }
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+            0 1px 3px rgba(0, 0, 0, 0.08);
         }
       }
     }
   }
-  
+}

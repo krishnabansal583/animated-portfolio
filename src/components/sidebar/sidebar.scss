@@ -1,3 +1,4 @@
+@import "../../app.scss";
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -6,6 +7,8 @@
   background-color: white;
   color: black;
 
+
+
   .bg {
     z-index: 999;
     position: fixed;
@@ -13,7 +16,20 @@
     left: 0;
     bottom: 0;
     width: 400px;
-    background-color: #caf0f8;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+
+    @include desktop {
+      width: 300px;
+    }
+
+    @include mobile {
+      width: 200px;
+    }
 
     .links {
       position: absolute;
@@ -24,6 +40,42 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
+
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        position: relative;
+        display: block;
+        text-transform: uppercase;
+        margin: -1px 0;
+        padding: 10px 20px;
+        transition: color 0.5s;
+        z-index: 1;
+        color: white;
+
+        @include desktop {
+          font-size: 15px;
+        }
+
+        @include mobile {
+          font-size: 15px;
+        }
+
+        &:hover {
+          color: #caf0f8;
+        }
+
+        &:hover:before {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+
+        &:hover:after {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -38,5 +90,8 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

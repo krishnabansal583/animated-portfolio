@@ -1,36 +1,41 @@
 import { useRef } from "react";
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+
 const items = [
   {
     id: 1,
     title: "Real Estate",
-    img: "https://images.pexels.com/photos/267399/pexels-photo-267399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et eum exercitationem facere nemo sequi a beatae. Impedit ea corporis assumenda quos neque odio, libero natus quibusdam vel iste ad",
+    img: "modern aprtment building on a mountain with many p.jpg",
+    desc: " Developed a cutting-edge Real Estate platform using React, NodeJS, MongoDB, and APIs, featuring robust property listings, search functionality, and interactive maps. Architected and developed an intuitive property management interface, seamlessly integrating Auth0 for secure  login/signup workflows.",
+    repoLink: "https://github.com/krishnabansal583/Final-Project-BDCOE",
   },
   {
     id: 2,
-    title: "Music Website",
-    img: "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et eum exercitationem facere nemo sequi a beatae. Impedit ea corporis assumenda quos neque odio, libero natus quibusdam vel iste ad ",
+    title: "Expense Tracker",
+    img: "expense tracker.jpg",
+    desc: "Conceptualized and constructed an intuitive Expense Tracker web application using React, HTML/CSS, and JavaScript, providing users with a seamless financial management experience. Utilized the Material UI library to design sleek and visually appealing user interfaces, ensuring an exceptional user experience across various devices. ", 
+    repoLink: "https://github.com/krishnabansal583/Expense-handler",
   },
   {
     id: 3,
-    title: "E-commerce",
-    img: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et eum exercitationem facere nemo sequi a beatae. Impedit ea corporis assumenda quos neque odio, libero natus quibusdam vel iste ad",
+    title: "Duck Hunt Game",
+    img: "the wolf hunter in black t-shirt is holding the du.jpg",
+    desc: "Duck Hunt Game is a classic arcade shooter recreated by our frontend team at Big Data Technical Society. Using React, JavaScript, HTML, and CSS, we've brought this nostalgic game to the web. Test your reflexes and aiming skills in this modern twist on a beloved classic.",
+    repoLink: "https://github.com/Kritika745/Duck-Hunt-Game",
   },
   {
     id: 4,
-    title: "Movie Website",
-    img: "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et eum exercitationem facere nemo sequi a beatae. Impedit ea corporis assumenda quos neque odio, libero natus quibusdam vel iste ad ",
+    title: "Music Website",
+    img: "epic EDM DJ album cover.jpg",
+    desc: "Introducing my personal project: a captivating Music Website, exclusively designed and developed by yours truly using HTML, CSS, and JavaScript. Immerse yourself in a world of melodies and rhythms, where you can explore playlists, discover new artists, and indulge in the joy of music—all powered by the magic of frontend development",
+    repoLink: "https://github.com/krishnabansal583/music",
   },
 ];
 
-const Single = ({item}) => {
+const Single = ({ item }) => {
   const ref = useRef();
-  const {scrollYProgress} = useScroll({
+  const { scrollYProgress } = useScroll({
     target: ref,
     // offset: ["start start", "end start"]
   });
@@ -43,10 +48,12 @@ const Single = ({item}) => {
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
+          <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Demo</button>
+            <a href={item.repoLink} target="_blank" rel="noopener noreferrer">
+              See Demo
+            </a>
           </motion.div>
         </div>
       </div>

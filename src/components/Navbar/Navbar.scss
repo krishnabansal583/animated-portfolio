@@ -1,26 +1,113 @@
-.navbar{
-    height: 100px;
+@import "../../app.scss";
 
-    .wrapper{
-        max-width: 1366px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
+.navbar {
+  height: 100px;
+  padding: 0 20px;
 
-        span{
-            font-weight: bold;
+  @include desktop {
+    height: 80px; // Decreased height for desktop
+  }
 
-        }
-        .social{
-            display: flex;
-            gap: 20px;
+  @include mobile {
+    height: 60px; // Adjust height for small mobile devices
+    padding: 0 10px; // Adjust padding for small mobile devices
+  }
 
-            img{
-                width: 20px;
-                height: 20px;
-            }
-        }
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    @include desktop {
+      padding: 0px 40px;
+      margin-top: 10px;
     }
+
+    @include tablet {
+      padding: 0 10px;
+    }
+
+    @include mobile {
+      justify-content: flex-end;
+      padding: 10px; // Adjust padding for small mobile devices
+    }
+
+    .profile-photo {
+      width: 200px;
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover;
+      margin-left: 30px;
+
+      @include desktop {
+        width: 150px;
+        margin-left: 100px;
+        height: 100px;
+      }
+
+      @include tablet {
+        width: 100px;
+      }
+
+      @include mobile {
+        display: none; // Hide profile photo on small mobile devices
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 20px;
+
+      @include mobile {
+        gap: 20px; // Adjust gap for small mobile devices
+        margin-bottom: 10px;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+
+        @include desktop {
+          width: 32px;
+          height: 32px;
+        }
+
+        @include tablet {
+          width: 30px;
+          height: 30px;
+        }
+
+        @include mobile {
+          width: 30px;
+          height: 30px;
+        }
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1366px) {
+    @content;
+  }
 }
