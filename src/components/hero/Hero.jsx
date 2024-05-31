@@ -2,8 +2,8 @@ import "./hero.scss";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from 'react-scroll';  // Import the Link component from react-scroll
-import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-scroll"; // Import the Link component from react-scroll
+import "react-toastify/dist/ReactToastify.css";
 
 const textVariants = {
   initial: {
@@ -48,18 +48,18 @@ const Hero = () => {
 
   const handleDownload = () => {
     setDownloading(true);
-    toast.info('CV is downloading...');
-    
-    const link = document.createElement('a');
-    link.href = '/krishnaresume final.pdf'; // Ensure the correct path to your PDF file
-    link.download = 'krishnaresume final.pdf'; // Desired file name for the downloaded file
+    toast.info("CV is downloading...");
+
+    const link = document.createElement("a");
+    link.href = "/krishnaresume final.pdf"; // Ensure the correct path to your PDF file
+    link.download = "krishnaresume final.pdf"; // Desired file name for the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
     setTimeout(() => {
       setDownloading(false);
-      toast.success('Your CV has been downloaded!');
+      toast.success("Your CV has been downloaded!");
     }, 5000); // Adjust the timeout duration to match the expected download time
   };
 
@@ -90,7 +90,9 @@ const Hero = () => {
                 See the latest Works
               </motion.button>
             </Link>
-            <Link to="contact" smooth={true} duration={1000}>  {/* Use Link to scroll to the contact section */}
+            <Link to="contact" smooth={true} duration={1000}>
+              {" "}
+              {/* Use Link to scroll to the contact section */}
               <motion.button type="button" variants={textVariants}>
                 Contact Me
               </motion.button>
